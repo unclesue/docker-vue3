@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nodetest:
+    build: .
+    working_dir: /app
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./index.html:/app/index.html
+      - ./package.json:/app/package.json
+      - ./vite.config.js:/app/vite.config.js
+    ports:
+      - "3000:3000"
+    container_name: nodetest-name
